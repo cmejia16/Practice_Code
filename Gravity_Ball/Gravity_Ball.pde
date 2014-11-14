@@ -24,10 +24,11 @@ void draw() {
   xloc += velx;
   yloc += vely;
   
+  fill (180, 64, 205);
   ellipse (xloc, yloc, sz, sz);
   
   if (yloc + sz/2 > height) { 
    yloc= height - sz/2;
-   vely= -abs (vely); 
+   vely= vely * -0.95; 
   }
 }
