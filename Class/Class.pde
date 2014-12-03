@@ -34,7 +34,7 @@ class GravityBall {
 
  
   GravityBall() {
-    loc = new PVector(width/2, 50);
+    loc = new PVector(random(sz, width-sz), random(height/2));
     vel = new PVector(0, 0);
     acc = new PVector(0, .1);
     sz = 50;
