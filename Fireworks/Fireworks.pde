@@ -1,3 +1,4 @@
+PImage fireworksBG;
 ArrayList<Particle> allMyParticles = new ArrayList <Particle>(200);
 
 void setup() {
@@ -9,6 +10,10 @@ void setup() {
 
 void draw() {
   background (0);
+  //load the image
+  imageMode(CENTER);
+  fireworksBG = loadImage ("fireworksBG.png");
+  //for loop to make the class particle appear and the firework explode
   for (int i=0; i < allMyParticles.size(); i++){
    Particle c = allMyParticles.get(i);
    c.display();
@@ -16,8 +21,9 @@ void draw() {
    c.update(); 
   }
   
-//  if (mousePressed){
+  // if statement to make the firework explode when the mouse is pressed at a specified location
+  if (mousePressed){
    allMyParticles.add(new Particle()); 
-//  }
+  }
 }
 
