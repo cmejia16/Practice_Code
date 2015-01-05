@@ -12,7 +12,7 @@ class Particle {
    Particle(float x, float y) {
      loc = new PVector(x,y);
      acc = new PVector(0, .1);
-     vel = new PVector(random(-2,2), -3);
+     vel = new PVector(random(-2,2), random(-3,0));
      sz = 5;
      life = 150;
      lifespan = life;
