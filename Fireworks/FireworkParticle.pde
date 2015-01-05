@@ -1,24 +1,20 @@
-//class FireworkParticle {
-//  PVector loc, acc, vel;
-//  float sz;
-//
-//  FireworkParticle() {
-//    loc = new PVector (x, y);
-//    acc = new PVector (random (-3, 3), random (-5, 0));
-//    vel = new PVector (0, .1);
-//    sz = 3;
-//  }
-//
-//  void display() {
-//    loc.add(vel);
-//    vel.add(acc);
-//  }
-//
-////  void move() {
-////    
-////  }
-//
-//  boolean() {
-//  }
-//}
+class FireworkParticle {
+  ArrayList<Particle> allMyParticles;
+
+  FireworkParticle(float x, float y) {
+    allMyParticles = new ArrayList<Particle>();
+    for (int i = 0; i < 50; i++) {
+      allMyParticles.add(new Particle(x, y));
+    }
+  }
+
+  void run() {
+    for (int i=0; i < allMyParticles.size (); i++) {
+      Particle c = allMyParticles.get(i);
+      c.display();
+      c.move();
+      c.update();
+    }
+  }
+}
 

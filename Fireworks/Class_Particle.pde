@@ -8,16 +8,16 @@ class Particle {
  float decay;
  float opacity;
  
- // create constructor for Particle to make firework
-   Particle() {
-     loc = new PVector(width/2, height *.2);
+ // create constructor for Particle to make one firework
+   Particle(float x, float y) {
+     loc = new PVector(x,y);
      acc = new PVector(0, .1);
      vel = new PVector(random(-2,2), -3);
      sz = 5;
-     life = 250;
+     life = 150;
      lifespan = life;
-     decay =1;
-     //opacity = map(life, 0, lifespan, 250, 25, 75);  
+     decay =1.5;
+     opacity = map(life, 0, lifespan, 25, 45);  
    }
  
   void display() {
@@ -32,6 +32,6 @@ class Particle {
   
   void update() {
     life -= decay;
-    //opacity = map(life, 0, lifespan, 250, 25, 75);  
+    opacity = map(life, 0, lifespan, 25, 45);  
   }
 }
